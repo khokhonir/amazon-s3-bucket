@@ -1,6 +1,6 @@
-package com.springbootdev.amazon.s3.example.aws.controller;
+package com.springbootdev.amazon.s3.example.aws.resource;
 
-import com.springbootdev.amazon.s3.example.aws.service.AmazonS3ClientService;
+import com.springbootdev.amazon.s3.example.aws.service.S3Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -10,18 +10,18 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/files")
-public class FileHandlerController {
+public class FileUploadResource {
 
     @Autowired
-    private AmazonS3ClientService amazonS3ClientService;
+    private S3Service s3ClientService;
 
     @PostMapping
     public Map<String, String> uploadFile(@RequestPart(value = "file") MultipartFile file)
     {
-        this.amazonS3ClientService.uploadFileToS3Bucket(file, true);
+        this.s3ClientService.uploadFileToS3Bucket(file);
 
         Map<String, String> response = new HashMap<>();
-        response.put("message", "file [" + file.getOriginalFilename() + "] uploading request submitted successfully.");
+        response.put("message", "file [" + file.getOriginalFilename() + "] uploading file successfully.");
 
         return response;
     }
@@ -29,10 +29,10 @@ public class FileHandlerController {
     @DeleteMapping
     public Map<String, String> deleteFile(@RequestParam("file_name") String fileName)
     {
-        this.amazonS3ClientService.deleteFileFromS3Bucket(fileName);
+        this.s3ClientService.deleteFileFromS3Bucket(fileName);
 
         Map<String, String> response = new HashMap<>();
-        response.put("message", "file [" + fileName + "] removing request submitted successfully.");
+        response.put("message", "file [" + fileName + "] removing file successfull.");
 
         return response;
     }

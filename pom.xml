@@ -3,13 +3,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.springbootdev.amazon.s3.example</groupId>
-	<artifactId>spring-boot-amazon-s3-example</artifactId>
+	<artifactId>spring-boot-s3-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>spring-boot-amazon-s3-example</name>
-	<description>Demo project for Spring Boot</description>
+	<name>spring-boot-s3-api</name>
+	<description>Amazon S3 Bucket API</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -25,6 +24,12 @@
 	</properties>
 
 	<dependencies>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
 
         <dependency>
             <groupId>com.amazonaws</groupId>
