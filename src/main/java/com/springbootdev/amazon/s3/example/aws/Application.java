@@ -4,10 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableAsync;
 
-@EnableAsync
 @SpringBootApplication
-public class SpringBootAmazonS3ExampleApplication {
+public class Application {
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootAmazonS3ExampleApplication.class, args);
+        SpringApplication.run(Application.class, args);
     }
 }
