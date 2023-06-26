@@ -46,10 +46,10 @@ Amazon S3 is one of the services from [Amazon Web Services](https://aws.amazon.c
 
 Run the command below in the terminal
 - mvn clean install
-- java -jar -Dspring.profiles.active=local target/<jar-name>
+- java -jar -Dspring.profiles.active=local target/jar-name.jar
   
 
-### 3.2.4 Upload the file using Postmanarget/<jarFileName>.jar
+### 3.2.4 Upload the file using Postman
 ![img.png](img.png)
 
 ### 3.2.5 Check the file in AWS
